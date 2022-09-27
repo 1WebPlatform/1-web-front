@@ -11,16 +11,16 @@ import { findData } from "~/src/service/findData";
 import { ProceduresApi } from "~/src/api/procedures";
 import { ProceduresDto } from "~/src/model/proceduresDto";
 import { useScreenStore } from "./src/store/screen";
+import { eventComponent } from "./src/service/eventComponent";
+import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
 
 (async () => {
   // Зона тестов
   const storeComponents = useComponentsStore();
-  const storeScreen = useScreenStore();
-  const data = await ComponentApi(1);
-  storeComponents.save(data.component);
-  storeScreen.save(data.screen);
-  const cms = storeComponents.getId("1"); 
-  await LoaderTableData(1, cms.event.create[0].params);
-
+  const id = 1;
+  await LoaderScreen(id);
+  await eventComponent(id.toString(), "create");
+  console.log(storeComponents.getDataset("1"));
+  
 })();
 </script>

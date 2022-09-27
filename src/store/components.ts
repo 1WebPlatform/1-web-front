@@ -29,6 +29,9 @@ export const useComponentsStore = defineStore('components', {
         },
         getContext() {
             return (id: string) => this.components[id].context
+        },
+        getEvent(){
+            return (id: string) => this.components[id].event  
         }
     }
 })
