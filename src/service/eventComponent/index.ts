@@ -8,5 +8,4 @@ export async function eventComponent(id: string, eventName: string) {
             result[index] = await callback[callbackElem.fun](id, callbackElem.params);
         }
     }
-    console.log(result);
 }

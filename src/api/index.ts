@@ -19,6 +19,6 @@ export async function BaseApi(
         headers: {
             "Authorization": authorization.value
         }
-    });
+    });    
     return data.value;
 }
