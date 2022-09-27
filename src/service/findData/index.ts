@@ -1,3 +1,4 @@
+import { isArray } from "@vue/shared";
 import { ObjectAny } from "~/src/model/objectAny";
 import { useComponentsStore } from "~~/src/store/components";
 
@@ -10,7 +11,7 @@ export function findData(params: ObjectAny) {
     const getContext = (id: string, nc: string) => {
         return componentsStore.getContext(id)[nc];
     }
-    const getDataset = (id:string, nc: string) => {
+    const getDataset = (id: string, nc: string) => {
         return componentsStore.getDataset(id)[nc];
     }
     for (const key in params) {
@@ -26,6 +27,9 @@ export function findData(params: ObjectAny) {
         if (elem.type === "dataset") {
             result[key] = getDataset(elem.id, elem.nc);
             continue;
+        }
+        if (isArray(elem)) {
+            result[key] = findData(elem[0]);
         }
     }
     return result;
