@@ -1,16 +1,12 @@
 import {defineStore} from 'pinia'
-import {ComponentApi} from "~/src/api/component";
 import {ObjectAny} from "~/src/model/objectAny";
 
-export const useComponentsStore = defineStore('counter', {
+export const useComponentsStore = defineStore('components', {
     state: () => {
         return {components: {}}
     },
 
     actions: {
-        async loader(id:number){
-           this.components = await ComponentApi(id);
-        },
         save(components){
             this.components = components
         },
