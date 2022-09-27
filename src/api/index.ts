@@ -10,13 +10,14 @@ export async function BaseApi(
     params?: ObjectAny,
 ) {
     const baseUrl = useRuntimeConfig().public.API_URL;
+    const authorization = useCookie('Authorization')
     const { data, error } = await useFetch(`${baseUrl}/${url}`, {
         method: method,
         params: params,
         body: body,
         key: key,
         headers: {
-            "Authorization": "$2a$06$9/FFxbmYIei.lLZS2huw0ObG5Bu6uUO9zgi1bRQ8sAnuOWgjfO2ea"
+            "Authorization": authorization.value
         }
     });
     return data.value;
