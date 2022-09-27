@@ -2,12 +2,11 @@ import { ProceduresApi } from "~/src/api/procedures";
 import { useComponentsStore } from "~/src/store/components";
 import { findData } from "~/src/service/findData";
 import { ProceduresDto } from "~/src/model/proceduresDto";
+import { ObjectAny } from "~~/src/model/objectAny";
 
-export async function LoaderTableData(id: number) {
-    const store = useComponentsStore();
-    const cms = store.getId(id.toString());
-    const body = findData(cms.event.create[0].params);
-    console.log(body);
+export async function LoaderTableData(id: number, params: ObjectAny[]) {
+    const componentsStore = useComponentsStore();
+    const body = findData(params);
     const dataset = await ProceduresApi(body as ProceduresDto);
-    console.log(dataset);
+    componentsStore.loaderData(id, dataset);
 }

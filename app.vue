@@ -19,9 +19,8 @@ import { useScreenStore } from "./src/store/screen";
   const data = await ComponentApi(1);
   storeComponents.save(data.component);
   storeScreen.save(data.screen);
-  const cms = storeComponents.getId("1");
-  const body = findData(cms.event.create[0].params);
-  const dataset = await ProceduresApi(body as ProceduresDto);
-  console.log(dataset);
+  const cms = storeComponents.getId("1"); 
+  await LoaderTableData(1, cms.event.create[0].params);
+
 })();
 </script>

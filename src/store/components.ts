@@ -20,6 +20,9 @@ export const useComponentsStore = defineStore('components', {
         },
         getId() {
             return (id: string) => this.components[id];
+        },
+        getDataset(){
+            return (id:string) => this.components[id].dataset;
         }
     }
 })
