@@ -10,7 +10,7 @@ export function findData(params: ObjectAny) {
     const getContext = (id: string, nc: string) => {
         return componentsStore.getContext(id)[nc];
     }
-    const getDataset = (id, nc: string) => {
+    const getDataset = (id:string, nc: string) => {
         return componentsStore.getDataset(id)[nc];
     }
     for (const key in params) {
