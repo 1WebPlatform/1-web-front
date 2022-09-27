@@ -4,7 +4,7 @@ import { useComponentsStore } from "~~/src/store/components";
 export function findData(params: ObjectAny) {
     const componentsStore = useComponentsStore();
     const result = {};
-    const getConst = (key: string, elem) => {
+    const getConst = (elem) => {
         return elem.value;
     }
     const getContext = (id: string, nc: string) => {
@@ -16,7 +16,7 @@ export function findData(params: ObjectAny) {
     for (const key in params) {
         const elem = params[key];
         if (elem.value !== undefined) {
-            result[key] = getConst(key, elem);
+            result[key] = getConst(elem);
             continue;
         }
         if (elem.type === "context") {
