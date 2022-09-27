@@ -12,6 +12,9 @@ export const useComponentsStore = defineStore('components', {
         },
         loaderData(id: number, data: ObjectAny[]) {
             this.components[id].dataset = data;
+        },
+        saveContext(id: number, context: ObjectAny) {
+            this.components[id].context = context;
         }
     },
     getters: {
@@ -21,8 +24,11 @@ export const useComponentsStore = defineStore('components', {
         getId() {
             return (id: string) => this.components[id];
         },
-        getDataset(){
-            return (id:string) => this.components[id].dataset;
+        getDataset() {
+            return (id: string) => this.components[id].dataset;
+        },
+        getContext() {
+            return (id: string) => this.components[id].context
         }
     }
 })
