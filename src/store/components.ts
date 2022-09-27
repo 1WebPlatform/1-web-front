@@ -1,16 +1,16 @@
-import {defineStore} from 'pinia'
-import {ObjectAny} from "~/src/model/objectAny";
+import { defineStore } from 'pinia'
+import { ObjectAny } from "~/src/model/objectAny";
 
 export const useComponentsStore = defineStore('components', {
     state: () => {
-        return {components: {}}
+        return { components: {} }
     },
 
     actions: {
-        save(components){
+        save(components) {
             this.components = components
         },
-        loaderData(id:number, data:ObjectAny[]){
+        loaderData(id: number, data: ObjectAny[]) {
             this.components[id].dataset = data;
         }
     },
@@ -19,7 +19,7 @@ export const useComponentsStore = defineStore('components', {
             return this.components;
         },
         getId() {
-            return (id:string) =>  this.components[id];
+            return (id: string) => this.components[id];
         }
     }
 })
