@@ -21,6 +21,6 @@ import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
   await LoaderScreen(id);
   await eventComponent(id.toString(), "create");
   console.log(storeComponents.getDataset("1"));
-  
+
 })();
 </script>
