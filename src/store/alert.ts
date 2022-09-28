@@ -7,6 +7,9 @@ export const useAlertStore = defineStore('alert', {
     actions: {
         save (alert:any) {
             this.alert.push(alert);
+        },
+        detele(index:number){
+            this.alert.splice(index, 1);
         }
     },
     getters: {

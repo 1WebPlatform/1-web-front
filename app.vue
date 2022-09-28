@@ -1,14 +1,14 @@
 <template>
   <div>
     <NuxtWelcome />
-    <Alert/>
+    <AlertWrapper/>
   </div>
 </template>
 <script setup lang="ts">
 import { useComponentsStore } from "~/src/store/components";
 import { eventComponent } from "./src/service/eventComponent";
 import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
-import Alert from "./src/component/alert/alert.vue";
+import AlertWrapper from "./src/component/alert/alert-wrapper/alert-wrapper.vue";
 
 (async () => {
   // Зона тестов

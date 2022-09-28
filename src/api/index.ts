@@ -22,7 +22,8 @@ export async function BaseApi(
             "Authorization": authorization.value
         }
     });
-    if (data.value.error_) {
+    if (data.value?.error_) {
+        data.value.error_.type = "error";
         alertStore.save(data.value.error_);
         return;
     }
