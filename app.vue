@@ -2,6 +2,7 @@
   <div>
     <!-- <NuxtWelcome /> -->
     <AlertWrapper />
+    <Button :id="2"></Button>
   </div>
 </template>
 <script setup lang="ts">
@@ -11,21 +12,15 @@ import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
 import AlertWrapper from "./src/component/alert/alert-wrapper/alert-wrapper.vue";
 import { useAlertStore } from "./src/store/alert";
 import { onMounted } from "vue";
+import Button from "./src/component/button/button.vue";
 onMounted(async () => {
   const alertStore = useAlertStore();
-  const storeComponents = useComponentsStore();
-  console.log('start!');
-
   alertStore.save({ id: 4, name: "удачно добавлено", type: "success", description: "удачно удален проект" });
 });
-  // (async () => {
-    // Зона тестов
-
-    // const id = 1;
-    // await LoaderScreen(id);
-    // await eventComponent(id.toString(), "create");
-    // storeComponents.saveContext(2, { id: 2 });
-    // await eventComponent("2", "click");
-
-  // })();
+(async()=>{
+  const storeComponents = useComponentsStore();
+  const id = 1;
+  await LoaderScreen(id);
+  
+})();
 </script>
