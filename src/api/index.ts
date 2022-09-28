@@ -1,5 +1,6 @@
 import { ObjectAny } from "~/src/model/objectAny";
 import { HttpMethod } from "~/src/model/httpMethod";
+import { useAlertStore } from "../store/alert";
 
 
 export async function BaseApi(
@@ -9,6 +10,7 @@ export async function BaseApi(
     body?: ObjectAny,
     params?: ObjectAny,
 ) {
+    const alertStore = useAlertStore();
     const baseUrl = useRuntimeConfig().public.API_URL;
     const authorization = useCookie('Authorization')
     const { data, error } = await useFetch(`${baseUrl}/${url}`, {
@@ -19,6 +21,10 @@ export async function BaseApi(
         headers: {
             "Authorization": authorization.value
         }
-    });    
+    });
+    if (data.value.error_) {
+        alertStore.save(data.value.error_);
+        return;
+    }
     return data.value;
 }
