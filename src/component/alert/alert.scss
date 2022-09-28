@@ -19,14 +19,16 @@
         margin-bottom: 2px;
         margin-right: 15px;
     }
-
+    /** alert-description */
+    &-description{
+        margin: 5px 0;
+    }
     /** alert-error */
     &-error {
         border: 1px solid #f5c2c7;
         color: #842029;
         background: #f8d7da;
     }
-
     /** alert-success */
     &-success {
         color: #0f5132;
@@ -40,5 +42,6 @@
         position: absolute;
         top: 5px;
         right: 5px;
+        font-size: 12px;
     }
 }
