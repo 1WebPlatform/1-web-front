@@ -17,6 +17,7 @@
     &-title {
         margin-top: 0;
         margin-bottom: 2px;
+        margin-right: 15px;
     }
 
     /** alert-error */
@@ -24,6 +25,13 @@
         border: 1px solid #f5c2c7;
         color: #842029;
         background: #f8d7da;
+    }
+
+    /** alert-success */
+    &-success {
+        color: #0f5132;
+        background: #d1e7dd;
+        border: 1px solid #badbcc;
     }
 
     /** alert-close */

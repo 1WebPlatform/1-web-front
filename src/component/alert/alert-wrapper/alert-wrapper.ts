@@ -4,7 +4,7 @@ export function alertWrapper() {
     const alertStore = useAlertStore();
     const alert = computed(() => {
         return alertStore.get
-    })
+    })   
     return {
         alert
     }
