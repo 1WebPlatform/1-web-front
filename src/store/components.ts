@@ -28,10 +28,13 @@ export const useComponentsStore = defineStore('components', {
             return (id: string) => this.components[id].dataset;
         },
         getContext() {
-            return (id: string) => this.components[id].context
+            return (id: string) => this.components[id].context;
         },
         getEvent(){
-            return (id: string) => this.components[id].event  
+            return (id: string) => this.components[id].event;  
+        },
+        getSchema(){
+            return (id: string) => this.components[id].schema; 
         }
     }
 })
