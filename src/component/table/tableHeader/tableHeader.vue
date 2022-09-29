@@ -1,8 +1,8 @@
 <template >
     <div class="table-header">
-        <div v-for="schema in cms.schema" :key="schema.id">
-            <TableTh :id="id" :schema="schema" />
-        </div>
+        <template v-for="schema in cms.schema" :key="schema.id">
+            <TableTh v-if="schema.visible" :id="id" :schema="schema" />
+        </template>
     </div>
 </template>
 <script lang="ts">
@@ -21,6 +21,6 @@ export default {
     }
 }
 </script>
-<style lang="">
-    
+<style lang="scss">
+@import "~~/src/component/table/tableHeader/tableHeader.scss"
 </style>

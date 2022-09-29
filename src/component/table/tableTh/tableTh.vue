@@ -1,5 +1,6 @@
 <template >
     <div class="table-th" :style="style">
+        {{schema.name}}
     </div>
 </template>
 <script lang="ts">
