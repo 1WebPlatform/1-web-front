@@ -1,5 +1,5 @@
 <template>
-    <button :title="cms?.params?.title" class="button">
+    <button @click="click" :title="cms?.params?.title" class="button">
         <div class="button-text">{{cms?.params?.text}}</div>
         <div class="button-container-image">
             <img class="button-image" src="" alt="">
