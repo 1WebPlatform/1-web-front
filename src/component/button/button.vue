@@ -11,12 +11,13 @@ import { toRefs } from "vue";
 import { button } from "./button";
 export default {
     props: {
-        id: { type: Number }
+        id: { type: Number },
+        context: {}
     },
     setup(props) {
-        const { id } = toRefs(props);
+        const { id, context } = toRefs(props);
         return {
-            ...button(id)
+            ...button(id, context)
         }
     }
 }

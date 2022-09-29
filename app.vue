@@ -2,12 +2,11 @@
   <div>
     <!-- <NuxtWelcome /> -->
     <AlertWrapper />
-    <Button :id="2"></Button>
+    <Button :id="2" :context="{id:2}"></Button>
   </div>
 </template>
 <script setup lang="ts">
 import { useComponentsStore } from "~/src/store/components";
-import { eventComponent } from "./src/service/eventComponent";
 import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
 import AlertWrapper from "./src/component/alert/alert-wrapper/alert-wrapper.vue";
 import { useAlertStore } from "./src/store/alert";
