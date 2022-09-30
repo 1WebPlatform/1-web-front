@@ -1,7 +1,7 @@
 <template>
     <div class="table-tr">
         <template v-for="schema in cms?.schema" :key="schema">
-            <TableTd v-if="schema.visible" :schema="schema" :id="id" :text="data[schema.nc]" />
+            <TableTd v-if="schema.visible" :schema="schema" :id="id" :data="data" />
         </template>
     </div>
 </template>
