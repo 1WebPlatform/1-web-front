@@ -1,7 +1,7 @@
 <template>
     <div class="table-tr">
         <template v-for="schema in cms?.schema" :key="schema">
-            <TableTd v-if="schema.visible" :id="id" :text="data[schema.nc]" />
+            <TableTd v-if="schema.visible" :schema="schema" :id="id" :text="data[schema.nc]" />
         </template>
     </div>
 </template>
@@ -11,7 +11,7 @@ import TableTd from '../tableTd/tableTd.vue';
 
 export default {
     props: {
-        // data: {},
+        data: {},
         id: { type: Number }
     },
     components: { TableTd },
@@ -24,5 +24,5 @@ export default {
 }
 </script>
 <style lang="scss">
-
+@import "table-tr";
 </style>

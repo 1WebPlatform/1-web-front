@@ -1,7 +1,6 @@
 <template>
-   <TableTr :id="id"></TableTr>
     <div class="table-body">
-        <!-- <TableTr :data="data" :id="id" v-for="data in cms.dataset" :key="data[cms.params.id_col]" /> -->
+         <TableTr :data="data" :id="id" v-for="data in cms.dataset" :key="data[cms.params.id_col]" />
     </div>
 </template>
 <script lang="ts">
