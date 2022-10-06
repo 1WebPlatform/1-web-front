@@ -23,6 +23,3 @@ export default {
   components: { Button }
 }
 </script>
-<style lang="scss">
-
-</style>
