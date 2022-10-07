@@ -10,5 +10,6 @@ export function getUrlCssFileComponent(id: number) {
 export function getUrlCssFileTemplate(id: number) {
     const URL_STATIC = useRuntimeConfig().public.URL_STATIC;
     const storeComponents = useComponentsStore();
-    const cms = storeComponents.getId(id.toString()); 
+    const cms = storeComponents.getId(id.toString());
+    return `${URL_STATIC}/style/template/${TypeComponent[cms.id_type]}.css`;
 }
