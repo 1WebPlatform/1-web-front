@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     publicRuntimeConfig: {
         API_URL: process.env.API_URL,
+        URL_STATIC: process.env.URL_STATIC,
     },
     modules: [
         // ...
