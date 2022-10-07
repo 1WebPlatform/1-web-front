@@ -1,5 +1,5 @@
 <template>
-    <div class="table">
+    <div class="table" :style="{'--url_template': url}">
         <TableHeader :id="id" />
         <TableBody :id="id" />
     </div>
