@@ -2,7 +2,7 @@
     <button @click="click" :title="cms?.params?.title" class="button">
         <div class="button-text" v-if="cms?.params?.text">{{cms?.params?.text}}</div>
         <div class="button-container-image" v-if="cms?.params?.icons">
-            <Image :url=cms?.params?.icons></Image>
+            <Image class="button-image" :url=cms?.params?.icons></Image>
         </div>
     </button>
 </template>
