@@ -2,8 +2,8 @@
   <div>
     <!-- <NuxtWelcome /> -->
     <AlertWrapper />
-    <Button :id="2" :context="{id:2}"></Button>
-    <Table :id="1" />
+    <Table :id="1"></Table>
+    <Table :id="1"></Table>
   </div>
 </template>
 <script setup lang="ts">
@@ -18,6 +18,8 @@ onMounted(async () => {
   const storeComponents = useComponentsStore();
   const id = 1;
   await LoaderScreen(id);
+  const storeAlert = useAlertStore();
+  storeAlert.save({id:1, name: "ошибка!!", description: "lorem!!!", type: "error"});
   // const alertStore = useAlertStore();
   // alertStore.save({ id: 4, name: "удачно добавлено", type: "success", description: "удачно удален проект" });
 });
@@ -26,4 +28,5 @@ onMounted(async () => {
   const id = 1;
   await LoaderScreen(id);
 })();
+
 </script>
