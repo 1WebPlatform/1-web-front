@@ -9,7 +9,7 @@
 import { alert } from './alert';
 export default {
     props:{
-        alert: {},
+        alert: {type: Object},
         index: { type: Number}
     },
     setup() {
@@ -17,6 +17,3 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-@import "~~/src/component/alert/alert.scss"
-</style>
