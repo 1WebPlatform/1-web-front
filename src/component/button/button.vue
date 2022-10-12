@@ -37,4 +37,8 @@ export default {
 .button-image {
     height: 100%;
 }
+
+.button object {
+    pointer-events: none;
+}
 </style>
