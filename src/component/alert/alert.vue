@@ -8,9 +8,9 @@
 <script lang="ts">
 import { alert } from './alert';
 export default {
-    props:{
-        alert: {type: Object},
-        index: { type: Number}
+    props: {
+        alert: { type: Object },
+        index: { type: Number }
     },
     setup() {
         return alert()
