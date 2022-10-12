@@ -1,5 +1,5 @@
 <template>
-  <div class="table-td" :style="style">
+  <div :data-nc="schema.nc" class="table-td" :style="style">
     {{ data[schema.nc] }}
     <Button :context="data" v-if="schema.type == 'button'" :id="schema.id"></Button>
   </div>
@@ -10,8 +10,8 @@ import Button from "../../button/button.vue";
 
 export default {
   props: {
-    data: {},
-    schema: {},
+    data: { type: Object },
+    schema: { type: Object },
     id: { type: Number }
   },
   setup(props) {
