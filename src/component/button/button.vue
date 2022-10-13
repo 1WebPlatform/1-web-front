@@ -24,21 +24,3 @@ export default {
     components: { Image }
 }
 </script>
-<style lang="scss">
-.button {
-    height: 16px;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.button-image {
-    height: 100%;
-}
-
-.button object {
-    pointer-events: none;
-}
-</style>
