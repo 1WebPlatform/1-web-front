@@ -2,17 +2,18 @@
   <div>
     <!-- <NuxtWelcome /> -->
     <AlertWrapper />
+    <Message :id="messageId" v-if="messageId !== null" />
     <Table :id="1"></Table>
   </div>
 </template>
 <script setup lang="ts">
 import { useComponentsStore } from "~/src/store/components";
+import { useMessageStore } from "~/src/store/message";
 import { LoaderScreen } from "./src/service/callback/all/loaderScreen";
 import AlertWrapper from "./src/component/alert/alert-wrapper/alert-wrapper.vue";
-import { useAlertStore } from "./src/store/alert";
 import { onMounted } from "vue";
-import Button from "./src/component/button/button.vue";
 import Table from "./src/component/table/table.vue";
+import Message from "./src/component/message/message.vue";
 onMounted(async () => {
   const storeComponents = useComponentsStore();
   const id = 1;
@@ -27,5 +28,12 @@ onMounted(async () => {
   const id = 1;
   await LoaderScreen(id);
 })();
+const storeMessage = useMessageStore();
+const messageId = computed(() => {
+  return storeMessage.get
+})
+return {
+  messageId
+}
 
 </script>

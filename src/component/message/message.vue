@@ -5,8 +5,8 @@
             <p class="message-text">{{cms.params.text}}</p>
         </div>
         <div class="message-container-button">
-            <button class="message-button-cancel">{{cms.params.name_cancel}}</button>
-            <button class="message-button-ok">{{cms.params.name_ok}}</button>
+            <button class="message-button-cancel">{{textCancel}}</button>
+            <button class="message-button-ok">{{textOk}}</button>
         </div>
     </div>
 </template>
