@@ -1,11 +1,9 @@
+import { TypeEvent } from "~~/src/enum/TypeEvent";
 import { eventComponent } from "./index"
 
 export function eventBuild(id: number) {
-    const click = async () => {
-        await eventComponent(id.toString(), "click");
+    const startEvent = async (name: TypeEvent) => {
+        await eventComponent(id.toString(), name);
     }
-    const create = async () => {
-        eventComponent(id.toString(), "create");
-    }
-    return { click, create }
+    return { startEvent }
 }
