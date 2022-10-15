@@ -15,6 +15,9 @@ export const useComponentsStore = defineStore('components', {
         },
         saveContext(id: number, context: ObjectAny) {
             this.components[id].context = context;
+        },
+        saveLoader(id: number) {
+            this.components[id].loader = true;
         }
     },
     getters: {
@@ -30,11 +33,11 @@ export const useComponentsStore = defineStore('components', {
         getContext() {
             return (id: string) => this.components[id].context;
         },
-        getEvent(){
-            return (id: string) => this.components[id].event;  
+        getEvent() {
+            return (id: string) => this.components[id].event;
         },
-        getSchema(){
-            return (id: string) => this.components[id].schema; 
+        getSchema() {
+            return (id: string) => this.components[id].schema;
         }
     }
 })
