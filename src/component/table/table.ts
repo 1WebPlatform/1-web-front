@@ -9,7 +9,7 @@ export function table(id: Ref<number>) {
     const { startEvent } = eventBuild(id.value);
     loaderCss(id.value);
     (async () => {
-        await startEvent(TypeEvent.create);
+        await startEvent(TypeEvent.create)();
     })();
     return { cms }
 }
