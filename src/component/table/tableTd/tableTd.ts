@@ -8,5 +8,8 @@ export function tableTd(id: Ref<number>, schema: Ref<any>) {
             ...styleW.value
         }
     })
-    return { style }
+    const clickTd = () => {
+        return;
+    }
+    return { style, clickTd }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div :data-nc="schema.nc" class="table-td" :style="style">
+  <div @click="clickTd" :data-nc="schema.nc" class="table-td" :style="style">
     {{ data[schema.nc] }}
     <Button :context="data" v-if="schema.type == 'button'" :id="schema.id"></Button>
   </div>
