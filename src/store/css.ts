@@ -6,13 +6,16 @@ export const useCssStore = defineStore('css', {
     },
 
     actions: {
-        save(key: string) {
-            this.css[key] = true;
+        save(key: string, url: string) {
+            this.css[key] = url;
         }
     },
     getters: {
         get() {
             return (key: string) => this.css[key];
         },
+        getAll() {
+            return this.css
+        }
     }
 })
