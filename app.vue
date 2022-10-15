@@ -32,8 +32,4 @@ const storeMessage = useMessageStore();
 const messageId = computed(() => {
   return storeMessage.get
 })
-return {
-  messageId
-}
-
 </script>
