@@ -14,6 +14,7 @@ import AlertWrapper from "./src/component/alert/alert-wrapper/alert-wrapper.vue"
 import { onMounted } from "vue";
 import Table from "./src/component/table/table.vue";
 import Message from "./src/component/message/message.vue";
+import { headCss } from "~~/src/libs/headCss"
 onMounted(async () => {
   const storeComponents = useComponentsStore();
   const id = 1;
@@ -27,9 +28,12 @@ onMounted(async () => {
   const storeComponents = useComponentsStore();
   const id = 1;
   await LoaderScreen(id);
+
 })();
 const storeMessage = useMessageStore();
 const messageId = computed(() => {
   return storeMessage.get
 })
+headCss();
+
 </script>
