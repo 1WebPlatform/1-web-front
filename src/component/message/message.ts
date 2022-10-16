@@ -19,11 +19,13 @@ export function message(id: Ref<number>) {
     const textCancel = computed(() => {
         return cms.value.params.name_cancel ?? "Отмена"
     })
-    const clickOk = () => {
-        startEvent(TypeEvent.click_ok);
+    const clickOk = async() => {
+        storeMessage.detele();
+        await startEvent(TypeEvent.click_ok);
     }
-    const clickCancel = () => {
-        startEvent(TypeEvent.click_cancel);
+    const clickCancel = async() => {
+        storeMessage.detele();
+        await startEvent(TypeEvent.click_cancel);
     }
     return { cms, textOk, textCancel, clickOk, clickCancel }
 }

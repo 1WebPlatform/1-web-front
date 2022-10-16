@@ -8,6 +8,8 @@ export function button(id: Ref<number>, context: Ref<ObjectAny>) {
     const { cms } = getCms(id.value);
     loaderCss(id.value);
     const { startEvent } = eventBuild(id.value);
-    const click = startEvent(TypeEvent.click);
+    const click = () => {
+        startEvent(TypeEvent.click);
+    }
     return { cms, click }
 }

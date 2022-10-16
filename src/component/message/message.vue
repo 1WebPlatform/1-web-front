@@ -6,8 +6,8 @@
                 <p class="message-text">{{cms.params.text}}</p>
             </div>
             <div class="message-container-button">
-                <button class="message-button message-button-cancel">{{textCancel}}</button>
-                <button class="message-button message-button-ok">{{textOk}}</button>
+                <button @click="clickCancel" class="message-button message-button-cancel">{{textCancel}}</button>
+                <button @click="clickOk" class="message-button message-button-ok">{{textOk}}</button>
             </div>
         </div>
     </div>
