@@ -3,16 +3,16 @@ import { ObjectAny } from "~/src/model/objectAny";
 import { useComponentsStore } from "~~/src/store/components";
 
 export function findData(params: ObjectAny) {
-    const componentsStore = useComponentsStore();
+    const storeComponents = useComponentsStore();
     const result = {};
     const getConst = (elem) => {
         return elem.value;
     }
     const getContext = (id: string, nc: string) => {
-        return componentsStore.getContext(id)[nc];
+        return storeComponents.getContext(id)[nc];
     }
     const getDataset = (id: string, nc: string) => {
-        return componentsStore.getDataset(id)[nc];
+        return storeComponents.getDataset(id)[nc];
     }
     for (const key in params) {
         const elem = params[key];

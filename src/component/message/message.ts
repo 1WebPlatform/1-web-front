@@ -4,9 +4,11 @@ import { getCms } from "~~/src/libs/getCms";
 import { loaderCss } from "~~/src/libs/loaderCss";
 import { eventBuild } from "~~/src/service/eventComponent/eventBuild";
 import { useComponentsStore } from "~~/src/store/components";
+import { useMessageStore } from "~~/src/store/message";
 
 export function message(id: Ref<number>) {
     const storeComponents = useComponentsStore();
+    const storeMessage = useMessageStore();
     const { cms } = getCms(id.value);
     const { startEvent } = eventBuild(id.value);
     loaderCss(id.value);
@@ -17,7 +19,11 @@ export function message(id: Ref<number>) {
     const textCancel = computed(() => {
         return cms.value.params.name_cancel ?? "Отмена"
     })
-    const clickOk = startEvent(TypeEvent.click_ok);
-    const clickCancel = startEvent(TypeEvent.click_cancel);
+    const clickOk = () => {
+        startEvent(TypeEvent.click_ok);
+    }
+    const clickCancel = () => {
+        startEvent(TypeEvent.click_cancel);
+    }
     return { cms, textOk, textCancel, clickOk, clickCancel }
 }
