@@ -8,9 +8,9 @@ export const useTableStore = defineStore('table', {
             this.components[id]._tec.focus.index = {};
         },
 
-        saveFocus(id: string, rows: ObjectAny, indexRow: number, indexCol: number) {
+        saveFocus(id: string, row: ObjectAny, indexRow: number, indexCol: number) {
             this.resetTecRows(id);
-            this.components[id]._tec.focus.rows = rows;
+            this.saveTecRows(id, row)
             this.components[id]._tec.focus.index.indexRow = indexRow;
             this.components[id]._tec.focus.index.indexCol = indexCol;
         },
