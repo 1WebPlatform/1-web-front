@@ -2,12 +2,6 @@ import { defineStore } from 'pinia'
 import { ObjectAny } from '../model/objectAny';
 export const useTableStore = defineStore('table', {
     actions: {
-        generatorTecTable(id: string) {
-            this.components[id]._tec = {};
-            this.components[id]._tec.focus = {};
-            this.components[id]._tec.focus.index = {};
-        },
-
         saveFocus(id: string, row: ObjectAny, indexRow: number, indexCol: number) {
             this.resetTecRows(id);
             this.saveTecRows(id, row)
