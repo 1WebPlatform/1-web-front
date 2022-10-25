@@ -15,9 +15,9 @@ export default {
     id: { type: Number }
   },
   setup(props) {
-    const { id, schema } = toRefs(props);
+    const { id, schema, data } = toRefs(props);
     return {
-      ...tableTd(id, schema)
+      ...tableTd(id, schema, data)
     };
   },
   components: { Button }

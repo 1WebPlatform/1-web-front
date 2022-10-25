@@ -6,6 +6,7 @@ export async function LoaderScreen(id: number) {
     const storeComponents = useComponentsStore();
     const storeScreen = useScreenStore();
     const data = await ComponentApi(id);
+    console.log(data);    
     storeComponents.save(data.component);
     storeScreen.save(data.screen);
 }
